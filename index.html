@@ -60,17 +60,14 @@
     .window-bar i{width:6px;height:6px;border:1px solid #a5b8be;border-radius:50%}
     .window-bar small{font-size:10px;color:#82949c;margin-left:auto;letter-spacing:.03em}
     .visual-content{padding:25px 24px 23px}
-    .visual-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:19px}
+    .visual-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
     .visual-title strong{font-size:14px;letter-spacing:-.04em}
     .visual-title span{background:#d4f4e7;color:#1b6c50;border-radius:3px;padding:4px 7px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-    .site-preview{display:grid;grid-template-columns:1.25fr .75fr;gap:12px;padding:15px;background:#fff;border:1px solid #d7e1e3;border-radius:6px}
-    .preview-lines{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:4px 0}
-    .preview-lines b{display:block;width:37%;height:5px;background:var(--ink);border-radius:2px;margin-bottom:5px}
-    .preview-lines i{display:block;width:80%;height:5px;background:#dde6e8;border-radius:2px}
-    .preview-lines i:nth-child(3){width:60%}
-    .preview-lines em{display:block;width:56px;height:15px;border-radius:2px;background:var(--cyan);margin-top:5px}
-    .preview-art{min-height:69px;border-radius:4px;background:repeating-linear-gradient(135deg,transparent 0 16px,rgba(0,169,223,.14) 16px 17px),linear-gradient(145deg,#c5e7ed,#eaf4f3);position:relative;overflow:hidden}
-    .preview-art::after{content:"";position:absolute;width:90px;height:90px;border:12px solid rgba(0,169,223,.24);border-radius:50%;top:15px;left:25px}
+    .site-preview{display:block;border:1px solid #d7e1e3;border-radius:6px;overflow:hidden;background:#fff}
+    .site-preview img{display:block;width:100%;height:auto;transition:transform .2s}
+    .site-preview:hover img,.site-preview:focus-visible img{transform:scale(1.02)}
+    .site-preview-link{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding-bottom:2px;border-bottom:1px solid #0089b7;font-size:12px;font-weight:800;color:#006c91}
+    .site-preview-link:hover{color:var(--ink)}
     .flow-label{display:flex;align-items:center;gap:10px;margin:24px 0 11px;font-size:10px;letter-spacing:.12em;font-weight:800;text-transform:uppercase;color:#56717d}
     .flow-label::after{content:"";height:1px;flex:1;background:#cbd9dd}
     .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
@@ -170,6 +167,18 @@
     th{background:#eaf0f0;font-size:12px;line-height:1.25}
     th:first-child,td:first-child{text-align:left;width:35%;font-weight:700}
     td:not(:first-child){color:#375363}
+    .story{background:#f3f5f1;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:9%;align-items:start}
+    .story .eyebrow{color:#008cb7;margin-bottom:24px}
+    .story h2{font-size:clamp(2.8rem,4.4vw,4.8rem);max-width:580px}
+    .story-lead{font:italic clamp(1.3rem,2vw,1.75rem)/1.35 Georgia,serif;color:#336075;max-width:470px}
+    .story-copy p{font-size:16px;line-height:1.7;max-width:590px;margin-bottom:18px}
+    .story-copy p:first-child{font-size:19px;color:var(--ink);font-weight:700;line-height:1.5}
+    .story-actions{display:flex;align-items:center;flex-wrap:wrap;gap:15px 24px;margin-top:28px}
+    .story-actions a:not(.btn){font-size:13px;font-weight:800;border-bottom:1px solid #008dbb;padding-bottom:4px}
+    .story-actions a:not(.btn):hover{color:#007da7}
+    .story-copy p a{text-decoration:underline;text-underline-offset:3px}
+    .story-copy p a:hover{color:#007da7}
     .about{background:#eaf0f0}
     .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:9%;align-items:center}
     .about-visual{position:relative;min-height:420px;background:var(--ink);color:#fff;overflow:hidden;border-radius:7px;display:flex;align-items:end;padding:28px}
@@ -231,7 +240,7 @@
       .brand img{width:235px}.hero-grid{grid-template-columns:1fr .85fr;gap:22px}.hero h1{font-size:clamp(3rem,5.7vw,5rem)}.visual{padding-left:0}.visual-content{padding:18px}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan{padding:25px 18px}.plan h4{font-size:18px}.price{font-size:30px}.about-grid,.faq-grid{gap:5%}
     }
     @media(max-width:760px){
-      .container{width:min(100% - 40px,1180px)}.nav{min-height:68px}.brand img{width:220px}.nav-links{display:none}.hero{padding:64px 0 74px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(3.25rem,9vw,5.5rem)}.visual{max-width:570px;width:100%;margin:auto}.trust-grid{grid-template-columns:1fr;gap:0;padding:20px 0}.trust-item{min-height:48px}.trust-item:not(:first-child){border-left:0;border-top:1px solid var(--line);padding-left:0}.section-pad{padding:78px 0}.path-grid,.method-heading,.about-grid,.faq-grid,.contact-inner{grid-template-columns:1fr}.method-heading{gap:18px}.steps{gap:16px}.step-number{margin-bottom:22px}.work-heading{align-items:start}.work-count{display:none}.pricing-intro,.group-heading{align-items:start;flex-direction:column}.pricing-intro{gap:25px}.plans{grid-template-columns:1fr}.plan{padding:27px}.plan h4,.plan-description{min-height:0}.plan-description{margin-bottom:18px}.plan ul{grid-template-columns:repeat(2,minmax(0,1fr))}.pricing-group+.pricing-group{margin-top:68px}.about-grid{gap:40px}.about-visual{min-height:360px}.studio-grid,.learning{grid-template-columns:1fr}.learning{gap:25px;margin-top:50px;padding-top:50px}.faq-grid{gap:28px}.contact-inner{gap:26px;padding-bottom:70px}.contact-options{max-width:550px}
+      .container{width:min(100% - 40px,1180px)}.nav{min-height:68px}.brand img{width:220px}.nav-links{display:none}.hero{padding:64px 0 74px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(3.25rem,9vw,5.5rem)}.visual{max-width:570px;width:100%;margin:auto}.trust-grid{grid-template-columns:1fr;gap:0;padding:20px 0}.trust-item{min-height:48px}.trust-item:not(:first-child){border-left:0;border-top:1px solid var(--line);padding-left:0}.section-pad{padding:78px 0}.path-grid,.method-heading,.story-grid,.about-grid,.faq-grid,.contact-inner{grid-template-columns:1fr}.story-grid{gap:22px}.method-heading{gap:18px}.steps{gap:16px}.step-number{margin-bottom:22px}.work-heading{align-items:start}.work-count{display:none}.pricing-intro,.group-heading{align-items:start;flex-direction:column}.pricing-intro{gap:25px}.plans{grid-template-columns:1fr}.plan{padding:27px}.plan h4,.plan-description{min-height:0}.plan-description{margin-bottom:18px}.plan ul{grid-template-columns:repeat(2,minmax(0,1fr))}.pricing-group+.pricing-group{margin-top:68px}.about-grid{gap:40px}.about-visual{min-height:360px}.studio-grid,.learning{grid-template-columns:1fr}.learning{gap:25px;margin-top:50px;padding-top:50px}.faq-grid{gap:28px}.contact-inner{gap:26px;padding-bottom:70px}.contact-options{max-width:550px}
     }
     @media(max-width:520px){
       .container{width:min(100% - 32px,1180px)}.brand img{width:205px}.footer-brand img{width:195px}.nav-cta{font-size:11px;padding:9px 10px}.hero{padding-top:54px}.hero .eyebrow{margin-bottom:24px}.hero h1{font-size:clamp(2.8rem,12vw,4.4rem);letter-spacing:-.065em}.hero-copy>p{font-size:15px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .btn{width:100%}.visual{padding-top:15px}.visual-content{padding:15px}.flow-item{padding:9px 6px;min-height:79px}.flow-item b{font-size:10px}.flow-item small{font-size:8px}.section-top p{font-size:15px}.path{min-height:360px;padding:27px 25px}.path-kicker{margin-bottom:42px}.steps{grid-template-columns:1fr;gap:30px}.step-number{margin-bottom:16px}.work-grid{grid-template-columns:1fr;gap:16px}.work-body{padding:23px 23px 25px}.plan ul{grid-template-columns:1fr}.group-heading>p{font-size:13px}.about-visual{padding:32px}.footer-main{flex-direction:column}.footer-links{gap:13px 22px}.contact{padding-top:75px}
@@ -259,17 +268,18 @@
           <p class="hero-fine">One person, start to launch. Based in Newtown Square, PA; working across the US.</p>
           <a class="hero-work-link" href="#work">Explore website demos <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="visual" role="img" aria-label="Illustration of an existing website connected to lead capture, appointment booking, and growth tools">
+        <div class="visual">
           <div class="visual-shell">
-            <div class="window-bar"><i></i><i></i><i></i><small>your business, connected</small></div>
+            <div class="window-bar"><i></i><i></i><i></i><small>website demo / bella vista salon</small></div>
             <div class="visual-content">
-              <div class="visual-title"><strong>Your website</strong><span>Keep it or rebuild it</span></div>
-              <div class="site-preview"><div class="preview-lines"><b></b><i></i><i></i><i></i><em></em></div><div class="preview-art"></div></div>
+              <div class="visual-title"><strong>A website you can explore</strong><span>Design concept</span></div>
+              <a class="site-preview" href="https://msmith71910.github.io/bella-vista-salon-demo/" target="_blank" rel="noopener noreferrer" aria-label="Explore the Bella Vista Salon website demo (opens in a new tab)"><img src="assets/work-salon.webp" width="840" height="497" alt="Bella Vista Salon and Spa website demo showing a finished homepage with navigation, photography, and a contact button" decoding="async" fetchpriority="high"></a>
+              <a class="site-preview-link" href="https://msmith71910.github.io/bella-vista-salon-demo/" target="_blank" rel="noopener noreferrer">Explore this demo <span aria-hidden="true">↗</span></a>
               <div class="flow-label">The work behind the website</div>
               <div class="flow"><div class="flow-item"><span class="flow-icon">+</span><b>Capture</b><small>New inquiries</small></div><div class="flow-item"><span class="flow-icon">↗</span><b>Book</b><small>Appointments</small></div><div class="flow-item"><span class="flow-icon">↗</span><b>Grow</b><small>Stay connected</small></div></div>
             </div>
           </div>
-          <p class="visual-note">The right setup for your business, not a one-size-fits-all rebuild.</p>
+          <p class="visual-note">Bella Vista is a design concept, not a client project.</p>
         </div>
       </div>
     </section>
@@ -306,6 +316,7 @@
         <article class="plan"><span class="plan-tag">A more connected front desk</span><h4>AI Front Desk</h4><p class="plan-description">Add phone-facing AI capabilities alongside chat, booking, and lead management.</p><div class="price">$497<span>/mo</span></div><p class="plan-meta">+ $599 one-time setup</p><hr><ul><li>Everything in Appointment Engine + AI Chat</li><li>AI voice front desk</li><li>Omnichannel AI across web, SMS, Instagram, and Facebook</li><li>No website rebuild or hosting change</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=AI%20Front%20Desk%20add-on%20inquiry">Ask about AI Front Desk <span class="arrow" aria-hidden="true">↗</span></a></article>
       </div><p class="pricing-note">Your current website stays with its existing host. Compatibility and embed access are reviewed before setup. Lead Capture Essentials has standard chat, not AI chat, and no SMS, AI, or phone usage. In higher tiers, applicable SMS, AI, or phone usage is separate from the monthly service fee and billed at cost; actual charges depend on usage. Platform integration is arranged after you inquire, not active on this page.</p></div>
     </div></section>
+    <section class="story section-pad" aria-labelledby="story-heading"><div class="container story-grid"><div><span class="eyebrow">Why I built this studio</span><h2 id="story-heading">Your Business Deserves a Website That Works.</h2><p class="story-lead">Professional websites for small businesses — built by one person who actually cares.</p></div><div class="story-copy"><p>Your small business deserves a website that actually works — without the $5,000 agency price tag or a three-month wait.</p><p>Some agencies take 60–90 days and charge thousands. DIY builders can leave you with a site that doesn't reflect your business or help customers find you. You shouldn't have to choose between overpaying and under-delivering.</p><p>I built Smith Development Labs to fix that. You work directly with me — no account managers, no hand-offs. I design a free demo of your site first. You see it, you approve it, and then you pay. Most new sites can go live in about a week after approval, depending on content and domain setup.</p><p>I've helped businesses across the country get online on time and on budget. Clients tell me they value the speed, the price, and knowing they can talk to the person actually building their site.</p><p>Want to see what your site could look like? Visit <a href="https://smithdevlabs.com" target="_blank" rel="noopener noreferrer">smithdevlabs.com</a> to request a free, no-commitment demo — or message me directly.</p><div class="story-actions"><a class="btn btn-dark" href="mailto:msmith@smithdevlabs.com?subject=Free%20website%20demo%20request">Request my free demo <span class="arrow" aria-hidden="true">↗</span></a><a href="#contact">Message Mike <span aria-hidden="true">↗</span></a></div></div></div></section>
     <section class="about section-pad" aria-labelledby="about-heading"><div class="container about-grid"><div class="about-visual"><img src="assets/mike-smith-studio.webp" width="1400" height="781" alt="Mike Smith standing beside his workstation in the Smith Development Labs studio" loading="lazy" decoding="async"><p>Small business thinking.<br>Hands-on building.<br>One point of contact.</p></div><div class="about-copy"><span class="eyebrow">Meet the person behind the work</span><h2 id="about-heading">No agency maze. Just Mike.</h2><p>I'm Michael R. Smith, founder of Smith Development Labs. I run this studio from Newtown Square, Pennsylvania, and work remotely with small businesses across the country.</p><p>Whether we're making your first real website or adding useful tools to the one you already have, you'll work with me directly from the first conversation through launch.</p><div class="about-signature">Mike Smith</div></div></div></section>
     <section class="studio section-pad" aria-labelledby="studio-heading"><div class="container"><div class="section-top"><span class="eyebrow">From my desk to your business</span><h2 id="studio-heading">See the work up close.</h2><p>A look at where I build, and a quick hello from the person you'll work with.</p></div><div class="studio-grid"><figure><img src="assets/mike-smith-at-work.webp" width="1400" height="781" alt="Mike Smith working at his computer in the Smith Development Labs studio" loading="lazy" decoding="async"><figcaption>At work in the studio<span>Built by me, from the first conversation through launch.</span></figcaption></figure><figure><video controls playsinline preload="metadata" poster="assets/mike-smith-video-poster.webp" aria-label="A personal introduction from Mike Smith"><source src="assets/mike-smith-introduction.mp4" type="video/mp4"><a href="assets/mike-smith-introduction.mp4" download>Download Mike's introduction video</a></video><figcaption>A quick introduction from Mike<span><a href="assets/mike-smith-introduction.mp4" download>Download the video</a> if you'd rather watch it later.</span></figcaption></figure></div><div class="learning"><div><span class="eyebrow" style="color:#008cb7;margin-bottom:20px">Experience &amp; learning</span><h3>The learning behind the work.</h3><p>A mix of professional certifications, courses, and hands-on learning. The Google Business Intelligence course shown here is still in progress.</p></div><div><a href="assets/certifications-and-coursework-2024-2026.png" aria-label="Open full-resolution image of my current certifications and coursework, 2024 to 2026"><img src="assets/certifications-and-coursework-2024-2026.png" width="859" height="515" alt="List of Mike's certifications and coursework from 2024 to 2026; Google Business Intelligence is marked in progress" loading="lazy" decoding="async"></a><span class="learning-label"><a href="assets/certifications-and-coursework-2024-2026.png">My current certifications and coursework (2024–2026) ↗</a></span></div></div></div></section>
     <section class="faq section-pad" id="faq" aria-labelledby="faq-heading"><div class="container faq-grid"><div class="section-top"><span class="eyebrow">Good to know</span><h2 id="faq-heading">Questions, answered.</h2><p>Clear expectations before you commit.</p></div><div class="faq-list">
