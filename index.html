@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d29">
+  <meta name="description" content="Smith Development Labs builds small business websites and adds lead capture, booking, and AI front desk tools to websites you already own. Based in Newtown Square, PA; serving businesses across the US.">
+  <title>Websites &amp; smarter business tools | Smith Development Labs</title>
+  <style>
+    :root{--ink:#101d29;--ink-soft:#1b3040;--paper:#f6f7f4;--white:#fff;--cyan:#00a9df;--cyan-light:#b9efff;--line:#d9e1e3;--muted:#536674;--shadow:0 26px 70px rgba(13,35,48,.12)}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button,a,summary{-webkit-tap-highlight-color:transparent}
+    :focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+    .skip-link{position:absolute;left:16px;top:-80px;z-index:20;padding:10px 16px;background:#fff;color:var(--ink)}
+    .skip-link:focus{top:10px}
+    .container{width:min(100% - 64px,1180px);margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.17em}
+    .eyebrow::before{content:"";width:18px;height:2px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{line-height:1.08;letter-spacing:-.055em}
+    h1{font-size:clamp(3.35rem,6.1vw,6.15rem);font-weight:700;max-width:760px;margin-bottom:25px}
+    h2{font-size:clamp(2.65rem,4.6vw,4.65rem);font-weight:700;margin-bottom:20px}
+    h3{font-size:1.5rem;margin-bottom:14px}
+    p{color:var(--muted)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:20px;min-height:52px;padding:13px 21px;border:1px solid transparent;border-radius:5px;font-size:13px;font-weight:800;line-height:1.25;transition:transform .2s,background .2s,border-color .2s;color:var(--ink);text-align:center}
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{background:var(--cyan-light)}
+    .btn-primary:hover{background:#e1f8ff}
+    .btn-outline{color:#fff;border-color:#617481;background:transparent}
+    .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-dark:hover{background:#244054}
+    .arrow{font-size:18px;font-weight:400;line-height:1}
+    .site-header{position:sticky;top:0;z-index:10;background:rgba(16,29,41,.97);border-bottom:1px solid rgba(255,255,255,.1);color:#fff}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0;font-size:13px;font-weight:800;line-height:1.1;letter-spacing:-.02em}
+    .brand-mark{width:35px;height:35px;display:grid;place-items:center;background:var(--cyan);color:var(--ink);font-size:13px;letter-spacing:-.09em;clip-path:polygon(0 0,100% 0,100% 68%,68% 100%,0 100%)}
+    .brand-name{max-width:130px}
+    .nav-links{display:flex;align-items:center;gap:clamp(16px,2.6vw,36px);margin-left:auto;font-size:12px;font-weight:700;color:#c5d2d9}
+    .nav-links a:hover,.footer-links a:hover{color:var(--cyan-light)}
+    .nav-cta{border:1px solid #628194;padding:10px 14px;border-radius:4px;font-size:12px;font-weight:800;white-space:nowrap;transition:background .2s}
+    .nav-cta:hover{background:#244054}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:84px 0 100px}
+    .hero::before{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 96%,rgba(255,255,255,.035) 96% 96.1%,transparent 96.1%),linear-gradient(0deg,transparent 0 94%,rgba(255,255,255,.035) 94% 94.1%,transparent 94.1%);background-size:120px 120px;mask-image:linear-gradient(90deg,transparent 18%,#000 100%)}
+    .hero::after{content:"";position:absolute;width:530px;height:530px;border:1px solid rgba(75,166,199,.13);border-radius:50%;right:-180px;top:0;pointer-events:none;box-shadow:0 0 0 90px rgba(75,166,199,.025),0 0 0 180px rgba(75,166,199,.02)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr);align-items:center;gap:clamp(32px,5vw,80px)}
+    .hero .eyebrow{color:var(--cyan-light);margin-bottom:34px}
+    .hero h1 span{color:var(--cyan-light)}
+    .hero-copy>p{font-size:17px;color:#b4c6d0;max-width:510px;margin-bottom:35px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:11px}
+    .hero-fine{font-size:12px;color:#8fa9b7;margin:23px 0 0}
+    .visual{position:relative;padding:26px 0 10px 19px}
+    .visual::before{content:"";position:absolute;inset:0 0 38px 52px;border:1px solid rgba(134,203,224,.2);border-radius:13px;transform:rotate(5deg);background:rgba(41,88,109,.1)}
+    .visual-shell{position:relative;background:#eaf2f3;color:var(--ink);border:1px solid #8da5ae;border-radius:11px;box-shadow:0 28px 68px rgba(0,0,0,.25);overflow:hidden}
+    .window-bar{height:39px;display:flex;align-items:center;gap:5px;padding:0 15px;background:#f9fbfa;border-bottom:1px solid #d7e1e3}
+    .window-bar i{width:6px;height:6px;border:1px solid #a5b8be;border-radius:50%}
+    .window-bar small{font-size:10px;color:#82949c;margin-left:auto;letter-spacing:.03em}
+    .visual-content{padding:25px 24px 23px}
+    .visual-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:19px}
+    .visual-title strong{font-size:14px;letter-spacing:-.04em}
+    .visual-title span{background:#d4f4e7;color:#1b6c50;border-radius:3px;padding:4px 7px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .site-preview{display:grid;grid-template-columns:1.25fr .75fr;gap:12px;padding:15px;background:#fff;border:1px solid #d7e1e3;border-radius:6px}
+    .preview-lines{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:4px 0}
+    .preview-lines b{display:block;width:37%;height:5px;background:var(--ink);border-radius:2px;margin-bottom:5px}
+    .preview-lines i{display:block;width:80%;height:5px;background:#dde6e8;border-radius:2px}
+    .preview-lines i:nth-child(3){width:60%}
+    .preview-lines em{display:block;width:56px;height:15px;border-radius:2px;background:var(--cyan);margin-top:5px}
+    .preview-art{min-height:69px;border-radius:4px;background:repeating-linear-gradient(135deg,transparent 0 16px,rgba(0,169,223,.14) 16px 17px),linear-gradient(145deg,#c5e7ed,#eaf4f3);position:relative;overflow:hidden}
+    .preview-art::after{content:"";position:absolute;width:90px;height:90px;border:12px solid rgba(0,169,223,.24);border-radius:50%;top:15px;left:25px}
+    .flow-label{display:flex;align-items:center;gap:10px;margin:24px 0 11px;font-size:10px;letter-spacing:.12em;font-weight:800;text-transform:uppercase;color:#56717d}
+    .flow-label::after{content:"";height:1px;flex:1;background:#cbd9dd}
+    .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+    .flow-item{min-width:0;background:#fff;border:1px solid #d7e1e3;border-radius:5px;padding:12px 8px 10px;min-height:82px}
+    .flow-item .flow-icon{width:21px;height:21px;display:grid;place-items:center;background:#e4f6fb;color:#047dab;border-radius:3px;font-size:13px;font-weight:800;margin-bottom:8px}
+    .flow-item b{display:block;font-size:11px;line-height:1.1}
+    .flow-item small{display:block;color:#758b94;font-size:9px;margin-top:3px;line-height:1.3}
+    .visual-note{position:relative;margin:13px 0 0;text-align:center;color:#b1cbd3;font-size:11px;letter-spacing:.02em}
+    .trust{border-bottom:1px solid var(--line);background:#fff}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;min-height:106px;align-items:center}
+    .trust-item{display:flex;align-items:center;gap:15px;font-size:13px;font-weight:750;letter-spacing:-.015em}
+    .trust-item:not(:first-child){border-left:1px solid var(--line);padding-left:34px}
+    .trust-index{color:#0089b7;font-family:Georgia,serif;font-style:italic;font-size:19px;font-weight:400}
+    section:not(.hero):not(.trust){scroll-margin-top:76px}
+    .section-pad{padding:108px 0}
+    .section-top{max-width:740px;margin-bottom:45px}
+    .section-top .eyebrow{color:#008cb7;margin-bottom:24px}
+    .section-top p{font-size:17px;max-width:610px;margin:0}
+    .paths{background:var(--paper)}
+    .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .path{position:relative;display:flex;flex-direction:column;min-height:420px;padding:38px 40px;border:1px solid #d4dde0;border-radius:8px;background:#fff;overflow:hidden}
+    .path:nth-child(2){background:#e7f4f6;border-color:#c9e3e8}
+    .path::after{content:"01";position:absolute;right:25px;top:7px;font-size:135px;line-height:1;font-weight:800;letter-spacing:-.09em;color:rgba(0,169,223,.055);pointer-events:none}
+    .path:nth-child(2)::after{content:"02";color:rgba(0,105,148,.06)}
+    .path-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:#007da7;margin-bottom:48px}
+    .path h3{font-size:clamp(2rem,3vw,3.1rem);max-width:350px;position:relative}
+    .path p{max-width:430px;margin-bottom:28px;position:relative}
+    .path a{margin-top:auto;align-self:flex-start;font-size:13px;font-weight:800;border-bottom:1px solid var(--cyan);padding-bottom:6px;position:relative}
+    .path a:hover{color:#007da7}
+    .method{background:#eaf0f0;border-top:1px solid #dce5e6;border-bottom:1px solid #dce5e6}
+    .method-heading{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:end;margin-bottom:55px}
+    .method-heading h2{margin-bottom:0}
+    .method-heading p{margin:0 0 6px;max-width:410px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .step{border-top:2px solid var(--ink);padding-top:22px}
+    .step-number{font:italic 29px Georgia,serif;color:#008dbb;display:block;margin-bottom:34px}
+    .step h3{font-size:23px}
+    .step p{font-size:14px;margin-bottom:0;max-width:310px}
+    .pricing{background:#fff}
+    .pricing-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:42px}
+    .pricing-intro .section-top{margin:0}
+    .pricing-intro .section-top h2{margin-bottom:15px}
+    .pricing-jump{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:4px}
+    .pricing-jump a{border:1px solid var(--line);padding:10px 13px;border-radius:4px;font-size:12px;font-weight:800;white-space:nowrap}
+    .pricing-jump a:hover{background:var(--paper);border-color:#9cb5c0}
+    .pricing-group{padding-top:32px}
+    .pricing-group+.pricing-group{margin-top:82px;border-top:1px solid var(--line)}
+    .group-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:22px}
+    .group-heading .eyebrow{color:#008cb7;margin-bottom:14px}
+    .group-heading h3{font-size:clamp(2rem,3vw,2.8rem);margin-bottom:0}
+    .group-heading>p{max-width:360px;font-size:13px;margin:0 0 4px}
+    .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .plan{display:flex;flex-direction:column;padding:29px 26px 27px;border:1px solid var(--line);border-radius:6px;background:var(--paper);min-width:0}
+    .plan.featured{background:var(--ink);border-color:var(--ink);color:#fff}
+    .plan-tag{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#007da7;min-height:24px}
+    .featured .plan-tag{color:var(--cyan-light)}
+    .plan h4{font-size:20px;line-height:1.18;letter-spacing:-.035em;margin:0 0 13px;min-height:48px}
+    .plan-description{font-size:13px;min-height:61px;margin:0 0 24px}
+    .featured .plan-description,.featured .plan-meta,.plan.featured li{color:#bed0d8}
+    .price{font-size:34px;font-weight:750;letter-spacing:-.07em;line-height:1}
+    .price span{font-size:14px;letter-spacing:0;font-weight:600}
+    .plan-meta{font-size:12px;margin:9px 0 0;color:var(--muted)}
+    .plan hr{border:0;border-top:1px solid var(--line);width:100%;margin:25px 0 20px}
+    .featured hr{border-color:#40525e}
+    .plan ul{margin:0 0 26px;padding:0;list-style:none;display:grid;gap:12px}
+    .plan li{position:relative;padding-left:19px;font-size:13px;line-height:1.4;color:#3c5260}
+    .plan li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border:2px solid var(--cyan);border-radius:50%}
+    .plan .btn{margin-top:auto;width:100%;background:var(--ink);color:#fff}
+    .plan .btn:hover{background:#294659}
+    .plan.featured .btn{background:var(--cyan-light);color:var(--ink)}
+    .plan.featured .btn:hover{background:#e1f8ff}
+    .pricing-note{font-size:12px;color:#526775;margin:17px 0 0;line-height:1.55}
+    .comparison{margin-top:60px}
+    .comparison h3{font-size:24px;margin-bottom:8px}
+    .comparison>p{font-size:13px;margin-bottom:18px}
+    .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+    table{width:100%;min-width:690px;border-collapse:collapse;text-align:center;font-size:13px}
+    th,td{padding:14px 17px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+    tr:last-child td{border-bottom:0}
+    th:last-child,td:last-child{border-right:0}
+    th{background:#eaf0f0;font-size:12px;line-height:1.25}
+    th:first-child,td:first-child{text-align:left;width:35%;font-weight:700}
+    td:not(:first-child){color:#375363}
+    .about{background:#eaf0f0}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:9%;align-items:center}
+    .about-visual{position:relative;min-height:345px;padding:48px;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border-radius:7px}
+    .about-visual::before{content:"";position:absolute;right:-105px;top:-125px;width:350px;height:350px;border:1px solid rgba(79,199,236,.35);border-radius:50%;box-shadow:0 0 0 48px rgba(79,199,236,.045),0 0 0 96px rgba(79,199,236,.035)}
+    .about-visual .monogram{position:relative;color:var(--cyan-light);font-size:72px;font-weight:700;letter-spacing:-.13em;line-height:1}
+    .about-visual p{position:relative;color:#b5c9d3;margin:0;font-size:15px;max-width:230px}
+    .about-copy .eyebrow{color:#008cb7;margin-bottom:23px}
+    .about-copy h2{font-size:clamp(2.5rem,4vw,4rem)}
+    .about-copy p{font-size:16px;max-width:560px}
+    .about-signature{font:italic 23px Georgia,serif;color:var(--ink);margin-top:26px}
+    .faq{background:#fff}
+    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:9%}
+    .faq-grid .section-top{margin-bottom:0}
+    .faq-list{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 2px;font-weight:750;font-size:15px;line-height:1.35}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:24px;font-weight:400;color:#008cb7;line-height:1;flex-shrink:0}
+    details[open] summary::after{content:"−"}
+    details p{font-size:14px;line-height:1.65;padding:0 32px 21px 2px;margin:0;max-width:590px}
+    .contact{background:var(--ink);color:#fff;padding:95px 0 0;overflow:hidden}
+    .contact-inner{position:relative;display:grid;grid-template-columns:1fr .7fr;gap:60px;padding-bottom:95px}
+    .contact-inner::after{content:"";pointer-events:none;position:absolute;width:420px;height:420px;border:1px solid rgba(79,199,236,.18);border-radius:50%;right:-160px;bottom:-310px;box-shadow:0 0 0 75px rgba(79,199,236,.025),0 0 0 150px rgba(79,199,236,.02)}
+    .contact .eyebrow{color:var(--cyan-light);margin-bottom:26px}
+    .contact h2{max-width:690px}
+    .contact h2 span{color:var(--cyan-light)}
+    .contact p{color:#adc3cf;max-width:540px}
+    .contact-options{display:flex;flex-direction:column;justify-content:end;gap:12px;position:relative;z-index:1}
+    .contact-options a{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:69px;padding:18px 19px;border:1px solid #526976;border-radius:5px;font-size:14px;font-weight:750;overflow-wrap:anywhere;transition:background .2s,border-color .2s}
+    .contact-options a:hover{background:#254052;border-color:#8db1c1}
+    .contact-options small{display:block;color:#9db5c2;font-size:11px;font-weight:500;margin-bottom:3px}
+    .contact-options .arrow{color:var(--cyan-light);flex-shrink:0}
+    footer{border-top:1px solid #39505f;background:var(--ink);color:#fff}
+    .footer-main{display:flex;justify-content:space-between;align-items:start;gap:30px;padding:32px 0 22px}
+    .footer-main p{color:#9eb3c0;font-size:12px;margin:11px 0 0;max-width:310px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:12px 25px;font-size:12px;color:#c5d2d9}
+    .footer-bottom{padding:20px 0 27px;border-top:1px solid #344b59;color:#8fa7b4;font-size:11px}
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr .85fr;gap:22px}.hero h1{font-size:clamp(3rem,5.7vw,5rem)}.visual{padding-left:0}.visual-content{padding:18px}.plan{padding:25px 18px}.plan h4{font-size:18px}.price{font-size:30px}.about-grid,.faq-grid{gap:5%}
+    }
+    @media(max-width:760px){
+      .container{width:min(100% - 40px,1180px)}.nav{min-height:68px}.nav-links{display:none}.hero{padding:64px 0 74px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(3.25rem,9vw,5.5rem)}.visual{max-width:570px;width:100%;margin:auto}.trust-grid{grid-template-columns:1fr;gap:0;padding:20px 0}.trust-item{min-height:48px}.trust-item:not(:first-child){border-left:0;border-top:1px solid var(--line);padding-left:0}.section-pad{padding:78px 0}.path-grid,.method-heading,.about-grid,.faq-grid,.contact-inner{grid-template-columns:1fr}.method-heading{gap:18px}.steps{gap:16px}.step-number{margin-bottom:22px}.pricing-intro,.group-heading{align-items:start;flex-direction:column}.pricing-intro{gap:25px}.plans{grid-template-columns:1fr}.plan{padding:27px}.plan h4,.plan-description{min-height:0}.plan-description{margin-bottom:18px}.plan ul{grid-template-columns:repeat(2,minmax(0,1fr))}.pricing-group+.pricing-group{margin-top:68px}.about-grid{gap:40px}.about-visual{min-height:270px}.faq-grid{gap:28px}.contact-inner{gap:26px;padding-bottom:70px}.contact-options{max-width:550px}
+    }
+    @media(max-width:520px){
+      .container{width:min(100% - 32px,1180px)}.brand{font-size:11px;gap:8px}.brand-mark{width:30px;height:30px;font-size:11px}.brand-name{max-width:105px}.nav-cta{font-size:11px;padding:9px 10px}.hero{padding-top:54px}.hero .eyebrow{margin-bottom:24px}.hero h1{font-size:clamp(2.8rem,12vw,4.4rem);letter-spacing:-.065em}.hero-copy>p{font-size:15px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .btn{width:100%}.visual{padding-top:15px}.visual-content{padding:15px}.flow-item{padding:9px 6px;min-height:79px}.flow-item b{font-size:10px}.flow-item small{font-size:8px}.section-top p{font-size:15px}.path{min-height:360px;padding:27px 25px}.path-kicker{margin-bottom:42px}.steps{grid-template-columns:1fr;gap:30px}.step-number{margin-bottom:16px}.plan ul{grid-template-columns:1fr}.group-heading>p{font-size:13px}.about-visual{padding:32px}.footer-main{flex-direction:column}.footer-links{gap:13px 22px}.contact{padding-top:75px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.nav-cta,.contact-options a{transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Smith Development Labs, back to top"><span class="brand-mark" aria-hidden="true">S/D</span><span class="brand-name">Smith<br>Development Labs</span></a>
+      <div class="nav-links"><a href="#paths">What I do</a><a href="#how-it-works">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+      <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Built for the way you do business</span>
+          <h1 id="hero-heading">A better website. <span>Or a smarter one you already own.</span></h1>
+          <p>From a brand-new online home to booking, lead capture, and AI tools added to the site you have, I build what your business actually needs.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="mailto:msmith@smithdevlabs.com?subject=Free%20website%20demo%20request">Get a free website demo <span class="arrow" aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#add-on-plans">Explore add-ons <span class="arrow" aria-hidden="true">↓</span></a></div>
+          <p class="hero-fine">One person, start to launch. Based in Newtown Square, PA; working across the US.</p>
+        </div>
+        <div class="visual" role="img" aria-label="Illustration of an existing website connected to lead capture, appointment booking, and growth tools">
+          <div class="visual-shell">
+            <div class="window-bar"><i></i><i></i><i></i><small>your business, connected</small></div>
+            <div class="visual-content">
+              <div class="visual-title"><strong>Your website</strong><span>Keep it or rebuild it</span></div>
+              <div class="site-preview"><div class="preview-lines"><b></b><i></i><i></i><i></i><em></em></div><div class="preview-art"></div></div>
+              <div class="flow-label">The work behind the website</div>
+              <div class="flow"><div class="flow-item"><span class="flow-icon">+</span><b>Capture</b><small>New inquiries</small></div><div class="flow-item"><span class="flow-icon">↗</span><b>Book</b><small>Appointments</small></div><div class="flow-item"><span class="flow-icon">↗</span><b>Grow</b><small>Stay connected</small></div></div>
+            </div>
+          </div>
+          <p class="visual-note">The right setup for your business, not a one-size-fits-all rebuild.</p>
+        </div>
+      </div>
+    </section>
+    <div class="trust" aria-label="The Smith Development Labs approach"><div class="container trust-grid"><div class="trust-item"><span class="trust-index">01</span> Your website, your way</div><div class="trust-item"><span class="trust-index">02</span> One person from start to launch</div><div class="trust-item"><span class="trust-index">03</span> Designed for real leads</div></div></div>
+    <section class="paths section-pad" id="paths" aria-labelledby="paths-heading">
+      <div class="container"><div class="section-top"><span class="eyebrow">Two ways to move forward</span><h2 id="paths-heading">Start fresh. Or build on what you've got.</h2><p>You don't need to replace a website that already works. Choose the path that makes sense for your business right now.</p></div>
+        <div class="path-grid"><article class="path"><span class="path-kicker">Path 01 / New website</span><h3>A site built to make the right first impression.</h3><p>A professional, mobile-friendly website with lead capture, booking, a CRM, and standard chat from day one. Add AI capabilities as your business needs them.</p><a href="#website-plans">See website plans <span aria-hidden="true">↗</span></a></article><article class="path"><span class="path-kicker">Path 02 / Keep your site</span><h3>More capability. Same website.</h3><p>Already have a site you like? Add lead capture, appointment booking, or an AI front desk without paying for a full rebuild or replacement hosting.</p><a href="#add-on-plans">See add-on plans <span aria-hidden="true">↗</span></a></article></div>
+      </div>
+    </section>
+    <section class="method section-pad" id="how-it-works" aria-labelledby="method-heading"><div class="container"><div class="method-heading"><div><span class="eyebrow" style="color:#008cb7;margin-bottom:23px">Simple from the start</span><h2 id="method-heading">A clear process. A real person.</h2></div><p>You'll work directly with me, Mike Smith. No account managers, no handoffs, and no guessing what happens next.</p></div><div class="steps"><div class="step"><span class="step-number">01 /</span><h3>Tell me what you need</h3><p>Share your business, your current website if you have one, and where inquiries are getting stuck.</p></div><div class="step"><span class="step-number">02 /</span><h3>See the right approach</h3><p>For a new website, I'll put together a free, no-obligation demo before you pay. For add-ons, we'll review your existing setup and what can be connected.</p></div><div class="step"><span class="step-number">03 /</span><h3>Approve &amp; launch</h3><p>Once you approve the scope and payment is arranged, I build and connect the agreed tools. New sites can launch in about a week after approval, depending on content and setup.</p></div></div></div></section>
+    <section class="pricing section-pad" id="pricing" aria-labelledby="pricing-heading"><div class="container"><div class="pricing-intro"><div class="section-top"><span class="eyebrow">Straightforward pricing</span><h2 id="pricing-heading">Choose your starting point.</h2><p>Every plan has a one-time setup fee and a monthly service fee. Website plans and existing-site add-ons are separate paths.</p></div><div class="pricing-jump" aria-label="Jump to a pricing path"><a href="#website-plans">New website ↓</a><a href="#add-on-plans">Keep my site ↓</a></div></div>
+      <div class="pricing-group" id="website-plans"><div class="group-heading"><div><span class="eyebrow">Built from the ground up</span><h3>New website plans</h3></div><p>For businesses that need a new professional website, with the option to grow into more connected tools.</p></div><div class="plans">
+        <article class="plan"><span class="plan-tag">The foundation</span><h4>Essentials</h4><p class="plan-description">A polished online home that makes it easy for customers to reach you.</p><div class="price">$149<span>/mo</span></div><p class="plan-meta">+ $499 one-time setup</p><hr><ul><li>Professional mobile-friendly website, hosting, and basic SEO</li><li>Lead capture forms and contact database</li><li>Full CRM and sales pipeline</li><li>Online calendar booking</li><li>Standard website chat widget</li><li>Basic automated follow-up</li><li>Unlimited contacts and user seats</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=Website%20Essentials%20inquiry">Ask about Essentials <span class="arrow" aria-hidden="true">↗</span></a></article>
+        <article class="plan featured"><span class="plan-tag">More ways to connect</span><h4>Growth &amp; AI Chat</h4><p class="plan-description">Your website and core CRM tools, plus AI conversations and more ways to follow up.</p><div class="price">$297<span>/mo</span></div><p class="plan-meta">+ $799 one-time setup</p><hr><ul><li>Everything in Essentials</li><li>24/7 AI website and SMS chat</li><li>Missed-call text-back</li><li>Appointment reminders</li><li>Review requests</li><li>Unified inbox</li><li>Basic email templates</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=Growth%20and%20AI%20Chat%20inquiry">Ask about Growth <span class="arrow" aria-hidden="true">↗</span></a></article>
+        <article class="plan"><span class="plan-tag">The full setup</span><h4>Complete AI Business Suite</h4><p class="plan-description">A connected website and front desk for more of the customer journey.</p><div class="price">$497<span>/mo</span></div><p class="plan-meta">+ $1,199 one-time setup</p><hr><ul><li>Everything in Growth &amp; AI Chat</li><li>24/7 AI voice receptionist</li><li>Omnichannel AI across web, SMS, Instagram, and Facebook</li><li>Multi-staff routing</li><li>Full email nurture and social scheduling</li><li>Priority website updates</li><li>Done-for-you AI training and monthly optimization</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=Complete%20AI%20Business%20Suite%20inquiry">Ask about Complete <span class="arrow" aria-hidden="true">↗</span></a></article>
+      </div><p class="pricing-note">Essentials has no SMS, AI, or phone usage charges because those tools are not included. For Growth &amp; AI Chat and Complete AI Business Suite, applicable SMS, AI, and phone usage is billed separately at cost; actual usage varies. We'll review the setup and any usage-based charges before you proceed.</p>
+      <div class="comparison"><h3>Compare website plans</h3><p>Scroll horizontally on a smaller screen to see every plan.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Website plan comparison, horizontally scrollable"><table><thead><tr><th scope="col">Included capability</th><th scope="col">Essentials</th><th scope="col">Growth &amp; AI Chat</th><th scope="col">Complete AI Business Suite</th></tr></thead><tbody><tr><td>New website and hosting</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Mobile-friendly design and basic SEO</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Lead capture forms and contact database</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Full CRM and sales pipeline</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Online calendar booking</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Standard website chat widget</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Basic automated follow-up</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>Unlimited contacts and user seats</td><td>Included</td><td>Included</td><td>Included</td></tr><tr><td>24/7 AI website and SMS chat</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>Missed-call text-back and appointment reminders</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>Review requests, unified inbox, basic email templates</td><td>—</td><td>Included</td><td>Included</td></tr><tr><td>24/7 AI voice receptionist</td><td>—</td><td>—</td><td>Included</td></tr><tr><td>Omnichannel web, SMS, Instagram, and Facebook AI</td><td>—</td><td>—</td><td>Included</td></tr><tr><td>Multi-staff routing</td><td>—</td><td>—</td><td>Included</td></tr><tr><td>Full email nurture and social scheduling</td><td>—</td><td>—</td><td>Included</td></tr><tr><td>Priority website updates</td><td>—</td><td>—</td><td>Included</td></tr><tr><td>Done-for-you AI training and monthly optimization</td><td>—</td><td>—</td><td>Included</td></tr><tr><td>SMS, AI, and phone usage billed at cost where applicable</td><td>Not applicable</td><td>As used</td><td>As used</td></tr></tbody></table></div></div></div>
+      <div class="pricing-group" id="add-on-plans"><div class="group-heading"><div><span class="eyebrow">Work with what you have</span><h3>Existing-site add-ons</h3></div><p>Keep your current website and hosting. These plans add connected tools; they do not include a website rebuild or replacement hosting.</p></div><div class="plans">
+        <article class="plan"><span class="plan-tag">Capture the opportunity</span><h4>Lead Capture Essentials</h4><p class="plan-description">A better way to collect and organize the inquiries coming through your current site.</p><div class="price">$147<span>/mo</span></div><p class="plan-meta">+ $49 one-time setup</p><hr><ul><li>Lead capture form for your existing site</li><li>Full CRM and sales pipeline</li><li>Online booking calendar</li><li>Standard website chat widget</li><li>No website rebuild or hosting change</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=Lead%20Capture%20Essentials%20inquiry">Ask about lead capture <span class="arrow" aria-hidden="true">↗</span></a></article>
+        <article class="plan featured"><span class="plan-tag">Make booking easier</span><h4>Appointment Engine + AI Chat</h4><p class="plan-description">Add AI conversations and automated appointment follow-up without rebuilding your website.</p><div class="price">$297<span>/mo</span></div><p class="plan-meta">+ $299 one-time setup</p><hr><ul><li>Everything in Lead Capture Essentials</li><li>AI chat for your existing website</li><li>Missed-call text-back</li><li>Appointment reminders</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=Appointment%20Engine%20and%20AI%20Chat%20inquiry">Ask about appointments <span class="arrow" aria-hidden="true">↗</span></a></article>
+        <article class="plan"><span class="plan-tag">A more connected front desk</span><h4>AI Front Desk</h4><p class="plan-description">Add phone-facing AI capabilities alongside chat, booking, and lead management.</p><div class="price">$497<span>/mo</span></div><p class="plan-meta">+ $599 one-time setup</p><hr><ul><li>Everything in Appointment Engine + AI Chat</li><li>AI voice front desk</li><li>Omnichannel AI across web, SMS, Instagram, and Facebook</li><li>No website rebuild or hosting change</li></ul><a class="btn" href="mailto:msmith@smithdevlabs.com?subject=AI%20Front%20Desk%20add-on%20inquiry">Ask about AI Front Desk <span class="arrow" aria-hidden="true">↗</span></a></article>
+      </div><p class="pricing-note">Your current website stays with its existing host. Compatibility and embed access are reviewed before setup. Lead Capture Essentials has standard chat, not AI chat, and no SMS, AI, or phone usage. In higher tiers, applicable SMS, AI, or phone usage is separate from the monthly service fee and billed at cost; actual charges depend on usage. Platform integration is arranged after you inquire, not active on this page.</p></div>
+    </div></section>
+    <section class="about section-pad" aria-labelledby="about-heading"><div class="container about-grid"><div class="about-visual" aria-hidden="true"><span class="monogram">S/D.</span><p>Small business thinking.<br>Hands-on building.<br>One point of contact.</p></div><div class="about-copy"><span class="eyebrow">Meet the person behind the work</span><h2 id="about-heading">No agency maze. Just Mike.</h2><p>I'm Michael R. Smith, founder of Smith Development Labs. I run this studio from Newtown Square, Pennsylvania, and work remotely with small businesses across the country.</p><p>Whether we're making your first real website or adding useful tools to the one you already have, you'll work with me directly from the first conversation through launch.</p><div class="about-signature">Mike Smith</div></div></div></section>
+    <section class="faq section-pad" id="faq" aria-labelledby="faq-heading"><div class="container faq-grid"><div class="section-top"><span class="eyebrow">Good to know</span><h2 id="faq-heading">Questions, answered.</h2><p>Clear expectations before you commit.</p></div><div class="faq-list">
+      <details><summary>Is the website demo really free?</summary><p>Yes. If you're considering a new website, I can create a no-obligation design demo so you can see the direction before paying. For add-ons to an existing website, we'll first discuss your current setup and what can be connected; a full website demo isn't part of that path.</p></details>
+      <details><summary>Can I keep my current website and domain?</summary><p>Yes. Existing-site add-ons are intended to work with your current website and hosting, subject to access and compatibility. If you choose a new website instead, you can generally use a domain you own; I'll review the connection with you.</p></details>
+      <details><summary>What do the monthly fees cover?</summary><p>New website plans include the ongoing website service and the capabilities listed in your tier; even Website Essentials includes CRM, booking, and standard (non-AI) chat. Existing-site plans cover the connected tools and service listed in that tier, not your current site's hosting. Neither Essentials plan has SMS, AI, or phone usage charges. In higher tiers, applicable SMS, AI, or phone usage is billed separately at cost and varies with activity.</p></details>
+      <details><summary>How long does setup take?</summary><p>A new website can typically launch in about a week after you approve the design, depending on content and domain readiness. Add-on timing depends on the tools selected and the access available on your existing site; we'll confirm a timeline together.</p></details>
+      <details><summary>What access do you need from me?</summary><p>For a new website, I'll need your business details, content, and access to connect your domain when it's time to launch. For add-ons, I'll review your site's embed options or administrator access and any relevant booking or phone requirements before recommending a setup.</p></details>
+      <details><summary>Can I upgrade later?</summary><p>Yes, we can talk through a higher tier or additional tools as your needs change. Any change in scope and pricing is discussed before work begins.</p></details>
+      <details><summary>What happens after I choose a plan?</summary><p>Email or call me first. We'll confirm fit, scope, any required integrations, and the applicable fees. For new websites, you'll review the free demo before payment; once you approve and payment is arranged, I'll complete the agreed setup and launch. There is no live checkout or connected platform form on this page.</p></details>
+    </div></div></section>
+    <section class="contact" id="contact" aria-labelledby="contact-heading"><div class="container contact-inner"><div><span class="eyebrow">Let's make it work</span><h2 id="contact-heading">Tell me where you are. <span>We'll take it from there.</span></h2><p>Need a new website, or want more from the one you have? Get in touch with Mike directly. We'll talk through the best fit before any platform setup or payment.</p></div><div class="contact-options"><a href="mailto:msmith@smithdevlabs.com?subject=Smith%20Development%20Labs%20project%20inquiry"><span><small>Send an email</small>msmith@smithdevlabs.com</span><span class="arrow" aria-hidden="true">↗</span></a><a href="tel:+14848443448"><span><small>Give Mike a call</small>(484) 844-3448</span><span class="arrow" aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+  <footer><div class="container footer-main"><div><a class="brand" href="#top" aria-label="Smith Development Labs, back to top"><span class="brand-mark" aria-hidden="true">S/D</span><span class="brand-name">Smith<br>Development Labs</span></a><p>Independent web design and connected business tools. Newtown Square, PA · Serving businesses across the US.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#paths">What I do</a><a href="#website-plans">Website plans</a><a href="#add-on-plans">Add-ons</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav></div><div class="container footer-bottom">© 2026 Smith Development Labs. Built with care by Mike Smith.</div></footer>
+</body>
+</html>
