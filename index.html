@@ -42,18 +42,24 @@
     .nav-links a:hover,.footer-links a:hover{color:var(--cyan-light)}
     .nav-cta{border:1px solid #628194;padding:10px 14px;border-radius:4px;font-size:12px;font-weight:800;white-space:nowrap;transition:background .2s}
     .nav-cta:hover{background:#244054}
-    .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:84px 0 100px}
+    .menu-toggle{display:none}
+    .mobile-menu{display:none}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:64px 0 84px}
     .hero::before{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 96%,rgba(255,255,255,.035) 96% 96.1%,transparent 96.1%),linear-gradient(0deg,transparent 0 94%,rgba(255,255,255,.035) 94% 94.1%,transparent 94.1%);background-size:120px 120px;mask-image:linear-gradient(90deg,transparent 18%,#000 100%)}
-    .hero::after{content:"";position:absolute;width:530px;height:530px;border:1px solid rgba(75,166,199,.13);border-radius:50%;right:-180px;top:0;pointer-events:none;box-shadow:0 0 0 90px rgba(75,166,199,.025),0 0 0 180px rgba(75,166,199,.02)}
-    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr);align-items:center;gap:clamp(32px,5vw,80px)}
-    .hero .eyebrow{color:var(--cyan-light);margin-bottom:34px}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:center;gap:clamp(32px,4.5vw,68px)}
+    .hero .eyebrow{color:var(--cyan-light);margin-bottom:25px}
+    .hero h1{font-size:clamp(3.25rem,5.4vw,5.35rem);line-height:1.03;margin-bottom:25px}
     .hero h1 span{color:var(--cyan-light)}
-    .hero-copy>p{font-size:17px;color:#b4c6d0;max-width:510px;margin-bottom:35px}
+    .hero-copy>p{font-size:17px;color:#d1dee3;max-width:510px;margin-bottom:30px}
     .hero-actions{display:flex;flex-wrap:wrap;gap:11px}
-    .hero-fine{font-size:12px;color:#8fa9b7;margin:23px 0 0}
+    .hero-fine{font-size:12px;color:#a8c1cd;margin:23px 0 0}
     .hero-work-link{display:inline-block;margin-top:16px;padding-bottom:4px;border-bottom:1px solid var(--cyan-light);font-size:13px;font-weight:800;color:var(--cyan-light)}
     .hero-work-link:hover{color:#fff;border-color:#fff}
-    .visual{position:relative;padding:26px 0 10px 19px}
+    .hero-photo{min-width:0;margin:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+    .hero-photo img{display:block;width:100%;height:clamp(360px,37vw,500px);object-fit:cover;object-position:65% center;border:1px solid rgba(185,239,255,.28)}
+    .hero-photo figcaption{display:flex;align-items:center;gap:12px;margin-top:14px;color:#c1d5dd;font-size:11px;font-weight:700;letter-spacing:.06em}
+    .hero-photo figcaption::before{content:"";width:28px;height:1px;background:var(--cyan-light)}
+    .visual{position:relative;grid-column:1/-1;width:min(100%,670px);margin:42px auto 0;padding:26px 0 10px 19px}
     .visual::before{content:"";position:absolute;inset:0 0 38px 52px;border:1px solid rgba(134,203,224,.2);border-radius:13px;transform:rotate(5deg);background:rgba(41,88,109,.1)}
     .visual-shell{position:relative;background:#eaf2f3;color:var(--ink);border:1px solid #8da5ae;border-radius:11px;box-shadow:0 28px 68px rgba(0,0,0,.25);overflow:hidden}
     .window-bar{height:39px;display:flex;align-items:center;gap:5px;padding:0 15px;background:#f9fbfa;border-bottom:1px solid #d7e1e3}
@@ -237,15 +243,15 @@
     .footer-social-links a:hover{color:var(--cyan-light)}
     .footer-bottom{padding:20px 0 27px;border-top:1px solid #344b59;color:#8fa7b4;font-size:11px}
     @media(max-width:980px){
-      .brand img{width:235px}.hero-grid{grid-template-columns:1fr .85fr;gap:22px}.hero h1{font-size:clamp(3rem,5.7vw,5rem)}.visual{padding-left:0}.visual-content{padding:18px}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan{padding:25px 18px}.plan h4{font-size:18px}.price{font-size:30px}.about-grid,.faq-grid{gap:5%}
+      .brand img{width:235px}.hero-grid{gap:26px}.hero h1{font-size:clamp(3rem,5.7vw,5rem)}.visual{padding-left:0}.visual-content{padding:18px}.work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan{padding:25px 18px}.plan h4{font-size:18px}.price{font-size:30px}.about-grid,.faq-grid{gap:5%}
     }
     @media(max-width:760px){
-      .container{width:min(100% - 40px,1180px)}.nav{min-height:68px}.brand img{width:220px}.nav-links{display:none}.hero{padding:64px 0 74px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(3.25rem,9vw,5.5rem)}.visual{max-width:570px;width:100%;margin:auto}.trust-grid{grid-template-columns:1fr;gap:0;padding:20px 0}.trust-item{min-height:48px}.trust-item:not(:first-child){border-left:0;border-top:1px solid var(--line);padding-left:0}.section-pad{padding:78px 0}.path-grid,.method-heading,.story-grid,.about-grid,.faq-grid,.contact-inner{grid-template-columns:1fr}.story-grid{gap:22px}.method-heading{gap:18px}.steps{gap:16px}.step-number{margin-bottom:22px}.work-heading{align-items:start}.work-count{display:none}.pricing-intro,.group-heading{align-items:start;flex-direction:column}.pricing-intro{gap:25px}.plans{grid-template-columns:1fr}.plan{padding:27px}.plan h4,.plan-description{min-height:0}.plan-description{margin-bottom:18px}.plan ul{grid-template-columns:repeat(2,minmax(0,1fr))}.pricing-group+.pricing-group{margin-top:68px}.about-grid{gap:40px}.about-visual{min-height:360px}.studio-grid,.learning{grid-template-columns:1fr}.learning{gap:25px;margin-top:50px;padding-top:50px}.faq-grid{gap:28px}.contact-inner{gap:26px;padding-bottom:70px}.contact-options{max-width:550px}
+      .container{width:min(100% - 40px,1180px)}.nav{min-height:68px}.brand img{width:220px}.nav-links,.nav-cta{display:none}.menu-toggle{display:inline-flex;align-items:center;gap:10px;margin-left:auto;padding:10px 12px;min-height:44px;border:1px solid #628194;border-radius:4px;background:transparent;color:#fff;font:800 13px "Avenir Next",Avenir,"Segoe UI",sans-serif;cursor:pointer}.menu-toggle::after{content:"+";font-size:19px;font-weight:400;line-height:1;color:var(--cyan-light)}.menu-toggle[aria-expanded="true"]::after{content:"−"}.mobile-menu:not([hidden]){display:grid;position:absolute;top:100%;left:0;right:0;padding:10px max(20px,calc((100vw - 1180px)/2)) 18px;background:var(--ink);border-bottom:1px solid #526976;box-shadow:0 20px 30px rgba(0,0,0,.25)}.mobile-menu a{display:block;padding:12px 0;border-bottom:1px solid #354b58;font-size:15px;font-weight:700}.mobile-menu a:last-child{color:var(--cyan-light);border-bottom:0}.mobile-menu a:hover{color:var(--cyan-light)}.hero{padding:30px 0 74px}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-photo{order:-1}.hero-photo img{height:clamp(220px,46vw,350px);object-position:center 44%}.hero h1{font-size:clamp(2.8rem,7.8vw,4.4rem)}.visual{max-width:570px;width:100%;margin:18px auto 0}.trust-grid{grid-template-columns:1fr;gap:0;padding:20px 0}.trust-item{min-height:48px}.trust-item:not(:first-child){border-left:0;border-top:1px solid var(--line);padding-left:0}.section-pad{padding:78px 0}.path-grid,.method-heading,.story-grid,.about-grid,.faq-grid,.contact-inner{grid-template-columns:1fr}.story-grid{gap:22px}.method-heading{gap:18px}.steps{gap:16px}.step-number{margin-bottom:22px}.work-heading{align-items:start}.work-count{display:none}.pricing-intro,.group-heading{align-items:start;flex-direction:column}.pricing-intro{gap:25px}.plans{grid-template-columns:1fr}.plan{padding:27px}.plan h4,.plan-description{min-height:0}.plan-description{margin-bottom:18px}.plan ul{grid-template-columns:repeat(2,minmax(0,1fr))}.pricing-group+.pricing-group{margin-top:68px}.about-grid{gap:40px}.about-visual{min-height:360px}.studio-grid,.learning{grid-template-columns:1fr}.learning{gap:25px;margin-top:50px;padding-top:50px}.faq-grid{gap:28px}.contact-inner{gap:26px;padding-bottom:70px}.contact-options{max-width:550px}
     }
     @media(max-width:520px){
-      .container{width:min(100% - 32px,1180px)}.brand img{width:205px}.footer-brand img{width:195px}.nav-cta{font-size:11px;padding:9px 10px}.hero{padding-top:54px}.hero .eyebrow{margin-bottom:24px}.hero h1{font-size:clamp(2.8rem,12vw,4.4rem);letter-spacing:-.065em}.hero-copy>p{font-size:15px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .btn{width:100%}.visual{padding-top:15px}.visual-content{padding:15px}.flow-item{padding:9px 6px;min-height:79px}.flow-item b{font-size:10px}.flow-item small{font-size:8px}.section-top p{font-size:15px}.path{min-height:360px;padding:27px 25px}.path-kicker{margin-bottom:42px}.steps{grid-template-columns:1fr;gap:30px}.step-number{margin-bottom:16px}.work-grid{grid-template-columns:1fr;gap:16px}.work-body{padding:23px 23px 25px}.plan ul{grid-template-columns:1fr}.group-heading>p{font-size:13px}.about-visual{padding:32px}.footer-main{flex-direction:column}.footer-links{gap:13px 22px}.contact{padding-top:75px}
+      .container{width:min(100% - 32px,1180px)}.nav{gap:10px}.brand img{width:205px}.footer-brand img{width:195px}.hero{padding-top:20px}.hero-photo img{height:clamp(185px,49vw,245px)}.hero .eyebrow{margin-bottom:12px}.hero h1{font-size:clamp(2.4rem,9.5vw,3.1rem);letter-spacing:-.06em;margin-bottom:16px}.hero-copy>p{font-size:15px;margin-bottom:20px}.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .btn{width:100%}.visual{padding-top:15px}.visual-content{padding:15px}.flow-item{padding:9px 6px;min-height:79px}.flow-item b{font-size:10px}.flow-item small{font-size:8px}.section-top p{font-size:15px}.path{min-height:360px;padding:27px 25px}.path-kicker{margin-bottom:42px}.steps{grid-template-columns:1fr;gap:30px}.step-number{margin-bottom:16px}.work-grid{grid-template-columns:1fr;gap:16px}.work-body{padding:23px 23px 25px}.plan ul{grid-template-columns:1fr}.group-heading>p{font-size:13px}.about-visual{padding:32px}.footer-main{flex-direction:column}.footer-links{gap:13px 22px}.contact{padding-top:75px}
     }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.nav-cta,.contact-options a,.work-card{transition:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.nav-cta,.contact-options a,.work-card,.site-preview img{transition:none}.btn:hover,.work-card:hover,.work-card:focus-within,.site-preview:hover img,.site-preview:focus-visible img{transform:none}}
   </style>
 </head>
 <body>
@@ -255,7 +261,9 @@
       <a class="brand" href="#top" aria-label="Smith Development Labs, back to top"><img src="assets/smith-development-labs-wordmark.webp" width="560" height="286" alt="" decoding="async"></a>
       <div class="nav-links"><a href="#paths">What I do</a><a href="#how-it-works">How it works</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
       <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false">Menu</button>
     </nav>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden><a href="#paths">What I do</a><a href="#how-it-works">How it works</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
   </header>
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-heading">
@@ -268,6 +276,7 @@
           <p class="hero-fine">One person, start to launch. Based in Newtown Square, PA; working across the US.</p>
           <a class="hero-work-link" href="#work">Explore website demos <span aria-hidden="true">↓</span></a>
         </div>
+        <figure class="hero-photo"><img src="assets/mike-smith-at-work.webp" width="1400" height="781" alt="Mike Smith working at his desk in the Smith Development Labs studio" fetchpriority="high" decoding="async"><figcaption>Mike Smith / at work in the studio</figcaption></figure>
         <div class="visual">
           <div class="visual-shell">
             <div class="window-bar"><i></i><i></i><i></i><small>website demo / bella vista salon</small></div>
@@ -331,5 +340,30 @@
     <section class="contact" id="contact" aria-labelledby="contact-heading"><div class="container contact-inner"><div><span class="eyebrow">Let's make it work</span><h2 id="contact-heading">Tell me where you are. <span>We'll take it from there.</span></h2><p>Need a new website, or want more from the one you have? Get in touch with Mike directly. We'll talk through the best fit before any platform setup or payment.</p></div><div class="contact-options"><a href="mailto:msmith@smithdevlabs.com?subject=Smith%20Development%20Labs%20project%20inquiry"><span><small>Send an email</small>msmith@smithdevlabs.com</span><span class="arrow" aria-hidden="true">↗</span></a><a href="tel:+14848443448"><span><small>Give Mike a call</small>(484) 844-3448</span><span class="arrow" aria-hidden="true">↗</span></a></div></div></section>
   </main>
   <footer><div class="container footer-main"><div><a class="footer-brand" href="#top" aria-label="Smith Development Labs, back to top"><img src="assets/smith-development-labs-shield.webp" width="650" height="521" alt="" loading="lazy" decoding="async"></a><p>Independent web design and connected business tools. Newtown Square, PA · Serving businesses across the US.</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#paths">What I do</a><a href="#work">Work</a><a href="#website-plans">Website plans</a><a href="#add-on-plans">Add-ons</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav></div><div class="container footer-social"><strong>Follow along</strong><div class="footer-social-links"><a href="https://www.instagram.com/smith_development_labs" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">Instagram ↗</a><a href="https://www.facebook.com/share/1DvDLr9xYr/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">Facebook ↗</a><a href="http://www.linkedin.com/in/michael-smith-2b38b260" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn ↗</a></div></div><div class="container footer-bottom">© 2026 Smith Development Labs. Built with care by Mike Smith.</div></footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('#mobile-menu');
+    const closeMenu = () => {
+      mobileMenu.hidden = true;
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+    menuToggle.addEventListener('click', () => {
+      const opening = mobileMenu.hidden;
+      mobileMenu.hidden = !opening;
+      menuToggle.setAttribute('aria-expanded', String(opening));
+    });
+    mobileMenu.addEventListener('click', event => {
+      if (event.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !mobileMenu.hidden) {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 761px)').addEventListener('change', event => {
+      if (event.matches) closeMenu();
+    });
+  </script>
 </body>
 </html>
