@@ -4,15 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101d29">
-  <meta name="description" content="Smith Development Labs builds small business websites and adds lead capture, booking, and AI front desk tools to websites you already own. Based in Newtown Square, PA; serving businesses across the US.">
- <title>Smith Dev Labs</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CE8ZFW0527"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CE8ZFW0527');
-  </script>
+  <meta name="description" content="Smith Development Labs builds small business websites and adds lead capture, booking and AI tools to sites you already own. Newtown Square, PA, serving the US.">
+  <link rel="canonical" href="https://www.smithdevlabs.com/"> <title>Smith Dev Labs</title>
   <style>
     :root{--ink:#101d29;--ink-soft:#1b3040;--paper:#f6f7f4;--white:#fff;--cyan:#00a9df;--cyan-light:#b9efff;--line:#d9e1e3;--muted:#536674;--shadow:0 26px 70px rgba(13,35,48,.12)}
     *,*::before,*::after{box-sizing:border-box}
@@ -420,8 +413,17 @@
   if (!choice) { banner.style.display = 'block'; }
   if (choice === 'accepted') { loadTracking(); }
   function loadTracking() {
-    // Load analytics / tracking scripts here, only after consent.
-    // Example: add your CRM tracking script or Google Analytics tag.
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CE8ZFW0527';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-CE8ZFW0527');
+  }
   }
   document.getElementById('cookie-accept').onclick = function () {
     localStorage.setItem(KEY, 'accepted');
