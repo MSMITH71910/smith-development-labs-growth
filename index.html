@@ -401,5 +401,32 @@
     });
   </script>
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6af7f26a0fbf641fd1fd82a1"></script>
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:16px;z-index:9999;font-size:14px;">
+  <span>We use cookies to improve your experience and measure traffic. See our <a href="/privacy" style="color:#9cf">Privacy Policy</a>.</span>
+  <button id="cookie-accept" style="margin-left:12px;padding:6px 14px;">Accept</button>
+  <button id="cookie-decline" style="margin-left:6px;padding:6px 14px;">Decline</button>
+</div>
+<script>
+(function () {
+  var KEY = 'cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  var choice = localStorage.getItem(KEY);
+  if (!choice) { banner.style.display = 'block'; }
+  if (choice === 'accepted') { loadTracking(); }
+  function loadTracking() {
+    // Load analytics / tracking scripts here, only after consent.
+    // Example: add your CRM tracking script or Google Analytics tag.
+  }
+  document.getElementById('cookie-accept').onclick = function () {
+    localStorage.setItem(KEY, 'accepted');
+    banner.style.display = 'none';
+    loadTracking();
+  };
+  document.getElementById('cookie-decline').onclick = function () {
+    localStorage.setItem(KEY, 'declined');
+    banner.style.display = 'none';
+  };
+})();
+</script>
 </body>
 </html>
