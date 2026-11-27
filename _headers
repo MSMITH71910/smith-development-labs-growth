@@ -1,5 +1,5 @@
 /*
-  Strict-Transport-Security: max-age=15552000
+  Strict-Transport-Security: max-age=31536000
 
 /assets/*
   Cache-Control: public, max-age=2592000
